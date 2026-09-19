@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" width="100%" height="280">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191a1c"/>
+      <stop offset="100%" stop-color="#232528"/>
+    </linearGradient>
+
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2b714"/>
+      <stop offset="100%" stop-color="#f8d752"/>
+    </linearGradient>
+
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2b714" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#e2b714" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#e2b714" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <style>
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      @keyframes waveScroll {
+        0% { stroke-dashoffset: 800; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseDot {
+        0%, 100% { fill: #4cd964; opacity: 1; filter: drop-shadow(0 0 4px #4cd964); }
+        50% { fill: #34c759; opacity: 0.5; filter: drop-shadow(0 0 1px #34c759); }
+      }
+      @keyframes glowLine {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+      }
+      .cursor {
+        animation: blink 0.9s step-end infinite;
+      }
+      .wave-anim {
+        stroke-dasharray: 400 400;
+        animation: waveScroll 8s linear infinite;
+      }
+      .status-pulse {
+        animation: pulseDot 2.2s ease-in-out infinite;
+      }
+      .grid-glow {
+        animation: glowLine 4s ease-in-out infinite;
+      }
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Ubuntu", monospace;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Card -->
+  <rect x="2" y="2" width="916" height="276" rx="14" fill="url(#cardBg)" stroke="#2f3136" stroke-width="1.5"/>
+
+  <!-- Top Bar -->
+  <rect x="2" y="2" width="916" height="42" rx="14" fill="#141517"/>
+  <rect x="2" y="30" width="916" height="14" fill="#141517"/>
+  <line x1="2" y1="44" x2="918" y2="44" stroke="#2a2c30" stroke-width="1"/>
+
+  <!-- Terminal Window Controls -->
+  <circle cx="28" cy="23" r="5.5" fill="#ff5f56"/>
+  <circle cx="48" cy="23" r="5.5" fill="#ffbd2e"/>
+  <circle cx="68" cy="23" r="5.5" fill="#27c93f"/>
+
+  <!-- Terminal Title -->
+  <text x="460" y="27" text-anchor="middle" fill="#646669" font-size="12" font-weight="600" letter-spacing="1">
+    HUMANOID-TYPING-ENGINE // NEUROMUSCULAR MOTOR CORE
+  </text>
+
+  <!-- Status Indicator -->
+  <circle cx="872" cy="23" r="4.5" class="status-pulse"/>
+  <text x="856" y="27" text-anchor="end" fill="#888c91" font-size="11" font-weight="500">LIVE</text>
+
+  <!-- Main Heading -->
+  <text x="46" y="98" fill="url(#goldText)" font-size="28" font-weight="800" letter-spacing="0.5">
+    Humanoid Auto-Typer
+  </text>
+  <text x="46" y="125" fill="#9da2a8" font-size="13" font-weight="400" letter-spacing="0.2">
+    Biomechanical Keystroke Cadence, Key Rollover &amp; Anti-Bot Evasion for Chromium
+  </text>
+
+  <!-- Animated Command Prompt Line -->
+  <rect x="46" y="146" width="410" height="28" rx="6" fill="#111214" stroke="#25272a" stroke-width="1"/>
+  <text x="58" y="165" fill="#e2b714" font-size="12" font-weight="700">&gt;</text>
+  <text x="74" y="165" fill="#d1d0c5" font-size="12" font-weight="500">engine.engage({ targetWpm: 500, mode: "streaming" })</text>
+  <rect x="424" y="153" width="8" height="14" fill="#e2b714" class="cursor"/>
+
+  <!-- Telemetry Metrics Cards -->
+  <!-- Card 1: Max Speed -->
+  <g transform="translate(480, 78)">
+    <rect width="96" height="52" rx="8" fill="#161719" stroke="#2b2d31" stroke-width="1"/>
+    <text x="12" y="22" fill="#646669" font-size="10" font-weight="600" letter-spacing="0.5">THROUGHPUT</text>
+    <text x="12" y="42" fill="#e2b714" font-size="16" font-weight="800">500 WPM</text>
+  </g>
+
+  <!-- Card 2: Motor Variance -->
+  <g transform="translate(586, 78)">
+    <rect width="96" height="52" rx="8" fill="#161719" stroke="#2b2d31" stroke-width="1"/>
+    <text x="12" y="22" fill="#646669" font-size="10" font-weight="600" letter-spacing="0.5">DISTRIBUTION</text>
+    <text x="12" y="42" fill="#d1d0c5" font-size="15" font-weight="700">Gaussian</text>
+  </g>
+
+  <!-- Card 3: Rollover -->
+  <g transform="translate(692, 78)">
+    <rect width="96" height="52" rx="8" fill="#161719" stroke="#2b2d31" stroke-width="1"/>
+    <text x="12" y="22" fill="#646669" font-size="10" font-weight="600" letter-spacing="0.5">ROLLOVER</text>
+    <text x="12" y="42" fill="#4cd964" font-size="15" font-weight="700">Asymmetric</text>
+  </g>
+
+  <!-- Card 4: Architecture -->
+  <g transform="translate(798, 78)">
+    <rect width="76" height="52" rx="8" fill="#161719" stroke="#2b2d31" stroke-width="1"/>
+    <text x="12" y="22" fill="#646669" font-size="10" font-weight="600" letter-spacing="0.5">RUNTIME</text>
+    <text x="12" y="42" fill="#d1d0c5" font-size="15" font-weight="700">MV3</text>
+  </g>
+
+  <!-- Background Grid & Wave Visualization (Consistency Waves) -->
+  <g opacity="0.3" class="grid-glow">
+    <line x1="46" y1="210" x2="874" y2="210" stroke="#2d3034" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="46" y1="240" x2="874" y2="240" stroke="#2d3034" stroke-width="1" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Animated Sinusoidal Velocity Wave Path -->
+  <path d="M 46,230 Q 98,198 150,230 T 254,230 T 358,230 T 462,230 T 566,230 T 670,230 T 774,230 T 874,230"
+        fill="none" stroke="url(#waveGrad)" stroke-width="2.5" class="wave-anim"/>
+
+  <!-- Static Base Line -->
+  <line x1="46" y1="258" x2="874" y2="258" stroke="#25272a" stroke-width="1"/>
+  
+  <text x="46" y="270" fill="#585c62" font-size="9.5" font-weight="500" letter-spacing="0.6">
+    MODEL: CLOSED-LOOP PACING COMPENSATOR // SINE DRIFT MODULATION // DWELL-TIME SCALING
+  </text>
+  <text x="874" y="270" text-anchor="end" fill="#585c62" font-size="9.5" font-weight="500" letter-spacing="0.6">
+    TARGETS: MONKEYTYPE.COM &amp; KEYBR.COM
+  </text>
+</svg>
