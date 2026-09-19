@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" alt="Humanoid Auto-Typer Banner" width="100%">
+  <img src="assets/banner.svg" alt="Humanoid Auto-Typer Banner" width="100%">
 </p>
 
 <p align="center">
