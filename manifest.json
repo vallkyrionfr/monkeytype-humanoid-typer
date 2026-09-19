@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "Humanoid Auto-Typer for Monkeytype & Keybr",
+  "version": "1.2.0",
+  "description": "Realistic humanoid auto-typer with authentic consistency curves, anti-bot evasion, and configurable WPM for Monkeytype and Keybr.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Humanoid Auto-Typer",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "debugger"
+  ],
+  "host_permissions": [
+    "*://monkeytype.com/*",
+    "*://*.monkeytype.com/*",
+    "*://keybr.com/*",
+    "*://*.keybr.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://monkeytype.com/*",
+        "*://*.monkeytype.com/*",
+        "*://keybr.com/*",
+        "*://*.keybr.com/*"
+      ],
+      "js": [
+        "content/adapters/base-adapter.js",
+        "content/adapters/monkeytype-adapter.js",
+        "content/adapters/keybr-adapter.js",
+        "content/words-tracker.js",
+        "content/humanoid-engine.js",
+        "content/hud.js",
+        "content/content-main.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/hud.css",
+        "popup/popup.html",
+        "popup/popup.css",
+        "icons/icon-16.png",
+        "icons/icon-48.png",
+        "icons/icon-128.png"
+      ],
+      "matches": [
+        "*://monkeytype.com/*",
+        "*://*.monkeytype.com/*",
+        "*://keybr.com/*",
+        "*://*.keybr.com/*"
+      ]
+    }
+  ]
+}

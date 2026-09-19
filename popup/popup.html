@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humanoid Auto-Typer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="header-branding">
+        <div class="status-indicator" id="status-dot"></div>
+        <div>
+          <h1 class="header-title">Humanoid Typer</h1>
+          <div style="font-size: 10px; color: #646669; margin-top: 1px;">Monkeytype &amp; Keybr</div>
+        </div>
+      </div>
+      <label class="toggle-switch" title="Toggle Auto-Typer ON/OFF">
+        <input type="checkbox" id="toggle-enabled" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </header>
+
+    <!-- Tab status alert -->
+    <div class="tab-status-card" id="tab-status-card">
+      <span class="tab-status-text" id="tab-status-text">Detecting active tab...</span>
+    </div>
+
+    <!-- Quick Action Buttons -->
+    <div class="action-buttons">
+      <button class="btn btn-primary" id="btn-start-test">
+        <span class="btn-icon">🚀</span> Start Typing Test
+      </button>
+      <button class="btn btn-secondary" id="btn-stop-test">
+        <span class="btn-icon">🛑</span> Stop
+      </button>
+    </div>
+
+    <!-- Speed Controls -->
+    <section class="control-group">
+      <div class="control-label-row">
+        <span class="label-title">Typing Speed</span>
+        <div class="speed-input-wrapper">
+          <input type="number" id="input-wpm" class="number-input" min="30" max="500" step="5" value="100">
+          <span class="unit-label">WPM</span>
+        </div>
+      </div>
+      <input type="range" id="slider-wpm" class="range-slider" min="30" max="500" step="5" value="100">
+      
+      <!-- Presets -->
+      <div class="presets-grid">
+        <button class="preset-pill" data-wpm="60">Casual (60)</button>
+        <button class="preset-pill active" data-wpm="100">Fast (100)</button>
+        <button class="preset-pill" data-wpm="160">Pro (160)</button>
+        <button class="preset-pill" data-wpm="250">God (250)</button>
+        <button class="preset-pill" data-wpm="500">Hyper (500)</button>
+      </div>
+    </section>
+
+    <!-- Accuracy & Takeover -->
+    <section class="control-group">
+      <div class="control-label-row">
+        <span class="label-title">Accuracy</span>
+        <span class="value-badge" id="val-accuracy">98%</span>
+      </div>
+      <input type="range" id="slider-accuracy" class="range-slider" min="90" max="100" step="1" value="98">
+      <div class="setting-row">
+        <label for="toggle-takeover" class="setting-label">Auto-Takeover on First Key</label>
+        <input type="checkbox" id="toggle-takeover" checked class="checkbox-input">
+      </div>
+    </section>
+
+    <!-- Shortcuts Footer -->
+    <footer class="popup-footer">
+      <div class="shortcut-item">
+        <span>Toggle ON/OFF</span>
+        <kbd>Alt + T</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span>Speed ±10 WPM</span>
+        <kbd>Alt + ↑ / ↓</kbd>
+      </div>
+      <div class="shortcut-item">
+        <span>Emergency Stop</span>
+        <kbd>Esc</kbd>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
